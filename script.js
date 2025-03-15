@@ -1,12 +1,14 @@
 // داده‌های تبدیل فینگلیش به فارسی
-let jsonData = null;
-
+const JSON_URL = './data.json';
 // تابع بارگذاری داده‌های JSON از یک URL
 async function loadJsonData() {
-    if (!jsonData) {
-        const response = await fetch('https://raw.githubusercontent.com/HASSANnu-source/finglish-bot/main/data.json');
+    try {
+        const response = await fetch(JSON_URL);
         if (!response.ok) throw new Error(`خطای دریافت JSON: ${response.status}`);
         jsonData = await response.json();
+        console.log('داده‌های JSON بارگذاری شدند:', jsonData);
+    } catch (error) {
+        console.error('خطا در بارگذاری JSON:', error);
     }
 }
 
