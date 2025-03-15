@@ -1,16 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const textareaEle = document.getElementById('inputText');
-    textareaEle.addEventListener('input', () => {
-        textareaEle.style.height = 'auto';
-        textareaEle.style.height = `${textareaEle.scrollHeight}px`;
-    });
-});
 const textarea = document.getElementById('inputText');
-
-        textarea.addEventListener('input', function () {
-            this.style.height = 'auto'; // ریست کردن ارتفاع
-            this.style.height = Math.min(this.scrollHeight, 200) + 'px'; // تنظیم ارتفاع بر اساس محتوا
-        });
+textarea.addEventListener('input', function () {
+    this.style.height = 'auto'; // ریست کردن ارتفاع
+    this.style.height = Math.min(this.scrollHeight, 200) + 'px'; // تنظیم ارتفاع بر اساس محتوا
+});
 const JSON_URL = 'data.json';
 // تابع بارگذاری داده‌های JSON از یک URL
 async function loadJsonData() {
