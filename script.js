@@ -4,7 +4,7 @@ let jsonData = null;
 // تابع بارگذاری داده‌های JSON از یک URL
 async function loadJsonData() {
     if (!jsonData) {
-        const response = await fetch('https://raw.githubusercontent.com/HASSANnu1/finglish-bot/main/data.json');
+        const response = await fetch('https://raw.githubusercontent.com/HASSANnu-source/finglish-bot/main/data.json');
         if (!response.ok) throw new Error(`خطای دریافت JSON: ${response.status}`);
         jsonData = await response.json();
     }
