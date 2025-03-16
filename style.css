@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: vazirmatn, vazir, Arial, Helvetica, sans-serif;
     text-align: center;
     margin-top: 50px;
     direction: rtl;
@@ -9,6 +9,8 @@ h1{
     color: #fff;
 }
 #inputText{
+    box-sizing: border-box;
+    font-size: 1.2em;
     color: #fff;
     background-color: #2b2a33;
     direction: ltr;
@@ -19,7 +21,6 @@ h1{
     max-height: 12.5em;
     width: 50%;
     margin: 5px;
-    overflow-y: auto;
 }
 button {
     padding: 10px 20px;
@@ -34,15 +35,15 @@ button:hover {
     background-color: #0057b371;
 }
 #result {
-    
+    overflow-wrap: break-word;
+    width: fit-content;
     max-width: 70vw;
     border-radius: 15px;
     background-color:bisque;
-    max-width: fit-content;
     border: 2px black solid;
     padding: 20px;
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 18px;
+    font-size: 1.2em;
 }
