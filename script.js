@@ -1,7 +1,16 @@
 const textarea = document.getElementById('inputText');
 textarea.addEventListener('input', function () {
     this.style.height = 'auto'; // ریست کردن ارتفاع
-    this.style.height = Math.min(this.scrollHeight, 200) + 'px'; // تنظیم ارتفاع بر اساس محتوا
+    this.style.height = `${this.scrollHeight}px`; // تنظیم ارتفاع بر اساس محتوا
+    
+    // تنظیم حداکثر ارتفاع و فعال کردن اسکرول اگر لازم باشد
+    const maxHeight = 200;
+    if (this.scrollHeight > maxHeight) {
+        this.style.height = `${maxHeight}px`;
+        this.style.overflowY = 'auto';
+    } else {
+        this.style.overflowY = 'hidden';
+    }
 });
 const JSON_URL = 'data.json';
 // تابع بارگذاری داده‌های JSON از یک URL
@@ -10,7 +19,6 @@ async function loadJsonData() {
         const response = await fetch(JSON_URL);
         if (!response.ok) throw new Error(`خطای دریافت JSON: ${response.status}`);
         jsonData = await response.json();
-        console.log('داده‌های JSON بارگذاری شدند:', jsonData);
     } catch (error) {
         console.error('خطا در بارگذاری JSON:', error);
     }
