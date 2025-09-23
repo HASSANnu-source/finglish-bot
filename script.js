@@ -97,3 +97,4 @@ async function convertText() {
     }
 }        
 loadJsonData(); // مطمئن شویم که jsonData بارگذاری شده است
+
